@@ -3,3 +3,281 @@
     Author: Perceus Willy
     Style Sheet for Portfolio index page.
 */
+
+/* GENERAL STYLES / SETUP */
+
+* {
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+  --color-primary: #E85D9C;
+  --color-primary-hover: #C93E7E;
+  --color-bg: #FBF6F1;
+  --color-surface: #F5EDE6;
+  --color-divider: #A9805F;
+  --color-accent-nude: #F2E4D8;
+  --color-accent-brown: #D9BBA0;
+  --color-text: #2E2320;
+  --color-text-muted: #8A7A70;
+  --color-heading: #4A342A;
+}
+
+body.dark-mode {
+  --color-primary: #FF3D9A;
+  --color-primary-hover: #D6217A;
+  --color-bg: #0B0B0F;
+  --color-bg-end: #1C1C24;
+  --color-surface: #232330;
+  --color-accent-yellow: #F4FF3D;
+  --color-accent-blue: #3DB4FF;
+  --color-divider: #4A7FA8;
+  --color-text: #F5F5F7;
+  --color-text-muted: #A0A0AC;
+  --color-heading: #FFFFFF;
+
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-end) 100%);
+}
+
+.mode-toggle {
+    border: none;
+    padding: 8px;
+    font-size: 8px;
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-moon {
+    display: none;
+}
+
+body.dark-mode .icon-sun {
+    display: none;
+}
+
+body.dark-mode .icon-moon {
+    display: inline-block;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+.container {
+    padding: 45px 0;
+}
+
+.row {
+    width: 100%;
+    max-width: 800px;
+}
+
+.section__title {
+    margin: 20px;
+}
+
+.link__hover-effect:after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background: var(--color-text-muted);
+    width: 0;
+    bottom: -2px;
+    right: 0;
+    transition: all 0.3s ease;
+}
+
+.link__hover-effect:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+h1, h2, h3, h4, h5, h6, span {
+    text-align: center;
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    position: relative;
+}
+
+.flex {
+    display: flex;
+}
+
+.text--pink {
+    color: var(--color-primary);
+}
+
+.text--dark-pink {
+    color: var(--color-primary-hover);
+}
+
+/* NAVIGATION */
+nav {
+    width: 100%;
+    height: 24vh;
+    display: flex;
+    background: linear-gradient(180deg, var(--color-accent-nude), var(--color-accent-brown));
+    padding: 0 24px;
+    align-items: center;
+}
+
+.nav__container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.nav__link--list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding-right: 18px;
+    list-style: none;
+}
+
+.nav__link--list li {
+    margin: 0;
+}
+
+.logo__figure {
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo__figure,
+.nav__links {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav__links {
+    width: 40%;
+    justify-content: space-evenly;
+    margin-bottom: 16px;
+}
+
+.logo {
+    max-width: 100px;
+    border-radius: 24px;
+}
+
+.nav__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    margin-bottom: 8px;
+    width: 48px;
+    height: 48px;
+    aspect-ratio: 1 / 1;
+    font-size: 24px;
+    color: var(--color-text);
+    background-color: var(--color-divider);
+    border: 2px solid var(--color-primary);
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease-in, border-color 0.3s ease;
+}
+
+.nav__icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translate(-50%, 6px);
+
+    background: var(--color-text);
+    color: var(--color-text-muted);
+    padding: 6px 8px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s 0.5s ease, transform 0.2s 0.5s ease;
+    z-index: 21;
+}
+
+.nav__icon::before {
+    content: "";
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translate(-50%, 6px);
+
+    border: 6px solid transparent;
+    border-bottom-color: var(--color-text);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s 0.3s ease, transform 0.2s 0.3s ease;
+    z-index: 20;
+}
+
+.nav__icon:hover::after,
+.nav__icon:hover::before,
+.nav__icon:focus-visible::after,
+.nav__icon:focus-visible::before {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.nav__icon:hover {
+    transform: scale(1.2);
+    border: 2px solid var(--color-primary-hover);
+}
+
+.nav__icon:active {
+    transform: scale(1.1);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
