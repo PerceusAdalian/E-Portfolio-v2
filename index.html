@@ -17,27 +17,27 @@
                 </figure>
                 <ul class="nav__links">
                     <li class="nav__link">
-                        <a href="#" class="nav__icon" data-tooltip="Home">
-                            <i class="fa-regular fa-house"></i>
-                        </a>
-                    </li>
-                    <li class="nav__link">
-                        <a href="#projects" class="nav__icon" data-tooltip="Projects">
-                            <i class="fa-solid fa-diagram-project"></i>
-                        </a>
-                    </li>
-                    <li class="nav__link">
-                        <a href="#skills" class="nav__icon" data-tooltip="Tech Stack">
+                        <a href="#skills" class="nav__icon tooltip" data-tooltip="Tech Stack">
                             <i class="fa-solid fa-info"></i>
                         </a>
                     </li>
                     <li class="nav__link">
-                        <a href="#contact" class="nav__icon" data-tooltip="Contact">
+                        <a href="#projects" class="nav__icon tooltip" data-tooltip="Projects">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </a>
+                    </li>
+                    <li class="nav__link">
+                        <a href="#" class="nav__icon tooltip" data-tooltip="Home">
+                            <i class="fa-regular fa-house"></i>
+                        </a>
+                    </li>
+                    <li class="nav__link">
+                        <a href="#contact" class="nav__icon tooltip" data-tooltip="Contact">
                             <i class="fa-regular fa-handshake"></i>
                         </a>
                     </li>
                     <li class="nav__link">
-                        <button class="mode-toggle nav__icon" data-tooltip="Toggle Mode">
+                        <button class="mode-toggle nav__icon tooltip" data-tooltip="Toggle Mode">
                             <i class="fa-solid fa-sun icon-sun"></i>
                             <i class="fa-solid fa-moon icon-moon"></i>
                         </button>
@@ -45,17 +45,87 @@
                 </ul>
             </div>
         </nav>
+        <nav class="mini-nav" aria-hidden="true">
+            <ul class="mini-nav__links">
+                <li><a href="#" class="nav__icon tooltip" data-tooltip="Home"><i class="fa-regular fa-house"></i></a></li>
+                <li><a href="#contact" class="nav__icon tooltip" data-tooltip="Contact"><i class="fa-regular fa-handshake"></i></a></li>
+                <li><a href="#projects" class="nav__icon tooltip" data-tooltip="Projects"><i class="fa-solid fa-diagram-project"></i></a></li>
+                <li><a href="#skills" class="nav__icon tooltip" data-tooltip="Tech Stack"><i class="fa-solid fa-info"></i></a></li>
+            </ul>
+        </nav>
     </section>
-    <section id="about">
+    <section id="about" class="about">
         <div class="container">
             <div class="row">
                 <div class="about__section">
-                    <h1 class="section__title">About Me</h1>
+                    <div class="figure__">
+                        <img src="./assets/percy__self.JPG" class="img__self" alt="">
+                    </div> 
+                    <h1 class="section__title">Welcome!</h1>
                     <p>
-                        Hi there! My name is Percy Willy, and I'm a self-taught aspiring front-end software engineer.
-                        I'm so glad you could make it, let's dive in.
+                        My name is <span class="text--dark-green text--bold">Percy Willy</span>, and I'm a self-taught aspiring front-end software engineer.
+                        <br>I'm so glad you could make it. Let's dive in!
                     </p>
-                    <figure></figure>
+                    <figure class="figure__">
+                        <img src="./assets/about_img_welcome.svg" class="img__" alt="">
+                    </figure>
+                    <div class="mode-render">
+                        <a href="#about__background" class="nav__icon tooltip" data-tooltip="Continue" data-reveal-target="about__background">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about__background" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="about__section">
+                    <figure class="figure__">
+                        <img src="./assets/background.svg" class="img__" alt="">
+                    </figure>
+                    <h1 class="section__title">My Background</h1>
+                    <p class="background--paragraph">
+                        I'm from a small suburb in St. Louis off of the Big Bend. I grew up and graduated from Rolla Highschool, and ever since I was in middle school
+                        I quickly realized my knack for technology. I was the IT specialist in the household, and heading into college, I declared my major as Computer Science and Software Development.
+                        While in the works, I taught myself how to code in several languages before ever touching an IDE in university.
+                    </p>
+                    <p class="background--paragraph">
+                        Checkout my <a href="#skills" class="tooltip text--underline" data-tooltip="Jump to Section" data-reveal-target="skills"><span class="text--green">Tech Stack</span></a> to learn more!
+                    </p>
+                    <div class="divider"><span>or continue to gallery</span></div>
+                    <div class="mode-render">
+                        <a href="#about__gallery" class="nav__icon tooltip" data-tooltip="Continue" data-reveal-target="about__gallery">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about__gallery" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="about__section">
+                    <h1 class="section__title">🖼️ Gallery 📸</h1>
+                    <p class="background--paragraph">
+                        Apart from coding, I <span class="text--italic">love</span> nature. <br>Here's some of my favorite shots from this year:
+                    </p>
+                    <div class="gallery">
+                        <div class="gallery__track"></div>
+                        <div class="gallery__controls">
+                            <button class="nav__icon tooltip gallery__btn gallery__btn--prev" data-tooltip="Previous" aria-label="Previous image">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <button class="nav__icon tooltip gallery__btn gallery__btn--next" data-tooltip="Next" aria-label="Next image">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="background--paragraph">
+                        Seen enough?<br>Allow me to show you my <a href="#projects" class="tooltip text--underline" data-reveal-target="projects" data-tooltip="Proceed to Section"><span class="text--green text--bold">Projects</span></a> next!
+                    </p>
                 </div>
             </div>
         </div>

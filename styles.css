@@ -18,8 +18,8 @@ html {
 }
 
 :root {
-  --color-primary: #E85D9C;
-  --color-primary-hover: #C93E7E;
+  --color-primary: #3ebb0d;
+  --color-primary-hover: #398000;
   --color-bg: #FBF6F1;
   --color-surface: #F5EDE6;
   --color-divider: #A9805F;
@@ -31,8 +31,8 @@ html {
 }
 
 body.dark-mode {
-  --color-primary: #FF3D9A;
-  --color-primary-hover: #D6217A;
+  --color-primary: #3ebb0d;
+  --color-primary-hover: #3ebb0d;
   --color-bg: #0B0B0F;
   --color-bg-end: #1C1C24;
   --color-surface: #232330;
@@ -77,7 +77,7 @@ body.dark-mode .icon-moon {
 }
 
 .container {
-    padding: 45px 0;
+    padding: auto 0;
 }
 
 .row {
@@ -87,6 +87,7 @@ body.dark-mode .icon-moon {
 
 .section__title {
     margin: 20px;
+    font-size: 40px;
 }
 
 .link__hover-effect:after {
@@ -103,6 +104,10 @@ body.dark-mode .icon-moon {
 .link__hover-effect:hover:after {
     width: 100%;
     left: 0;
+}
+
+body {
+    background-color: var(--color-accent-brown);
 }
 
 h1, h2, h3, h4, h5, h6, span {
@@ -132,20 +137,74 @@ a {
     position: relative;
 }
 
+.hidden {
+    display: none;
+}
+
+.img__ {
+    display: block;
+    width: 50%;
+}
+
+.figure__ {
+    width: 100%;
+}
+
 .flex {
     display: flex;
 }
 
-.text--pink {
+.text--green {
     color: var(--color-primary);
 }
 
-.text--dark-pink {
+.text--dark-green {
     color: var(--color-primary-hover);
 }
 
+.text--bold {
+    font-weight: bold;
+}
+
+.text--italic {
+    font-style: italic;
+}
+
+.text--underline {
+    text-decoration: underline;
+}
+
+.text--glowgreen {
+    filter: drop-shadow(0 4px 4px var(--color-primary));
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--color-divider);
+    font-size: 12px;
+    padding-top: 32px;
+    cursor: default;
+    width: 100%;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: var(--color-divider);
+}
+
+.divider span {
+    padding: 0 10px;
+    color: var(--color-divider);
+    text-align: center;
+}
+
 /* NAVIGATION */
-nav {
+nav:not(.mini-nav) {
     width: 100%;
     height: 32vh;
     display: flex;
@@ -207,6 +266,13 @@ nav {
     border-radius: 24px;
     overflow: hidden;
     border: 2px solid var(--color-divider);
+    transition: border 0.35s ease, transform 0.3s ease, box-shadow 0.2s ease;
+}
+
+.logo:hover {
+    transform: scale(1.15);
+    border: 2px solid var(--color-text);
+    box-shadow: 0 8px 8px var(--color-heading);
 }
 
 .nav__icon {
@@ -229,7 +295,7 @@ nav {
     transition: color 0.3s ease-out, transform 0.2s ease-in, border-color 0.3s ease, box-shadow 0.4s ease;
 }
 
-.nav__icon::after {
+.tooltip::after {
     content: attr(data-tooltip);
     position: absolute;
     top: calc(100% + 8px);
@@ -249,7 +315,7 @@ nav {
     z-index: 21;
 }
 
-.nav__icon::before {
+.tooltip::before {
     content: "";
     position: absolute;
     top: calc(100% + 6px);
@@ -265,36 +331,83 @@ nav {
     z-index: 20;
 }
 
-.nav__icon:hover::after,
-.nav__icon:hover::before,
-.nav__icon:focus-visible::after,
-.nav__icon:focus-visible::before {
+.tooltip:hover::after,
+.tooltip:hover::before,
+.tooltip:focus-visible::after,
+.tooltip:focus-visible::before {
   opacity: 1;
   transform: translate(-50%, 0);
 }
 
 .nav__icon:hover {
     transform: scale(1.2);
-    box-shadow: 0 2px 2px var(--color-text);
-    border: 2px solid var(--color-heading);
 }
 
 .nav__icon:active {
     transform: scale(1.15);
     color: var(--color-divider);
-    box-shadow: 0 2px 2px var(--color-divider);
-    border: 2px solid var(--color-divider);
+}
+
+.mini-nav {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-divider);
+    border-radius: 1000px;
+    filter: drop-shadow(0 4px 8px var(--color-heading));
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.mini-nav.visible {
+    transform: translate(-50%, 0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mini-nav__links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.mini-nav__links .nav__icon {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+    margin-bottom: 0;
+}
+
+.mini-nav__links .nav__icon i,
+.mini-nav__links .nav__icon svg {
+    display: block;
 }
 
 /* ABOUT */
 
-#about {
-    display: flex;
+.about {
+    display: block;
+    position: relative;
+    flex: 1;
+    max-width: 50%;
     flex-direction: column;
     align-items: center;
-    flex: 1;
-    margin: 8px;
-    padding: 8px 8px 8px 8px;
+    margin: 64px auto;
+    padding: 16px 8px 16px 8px;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    border: 2px solid var(--color-divider);
+    box-shadow: 0 4px 4px var(--color-divider);
+    border-radius: 32px;
+    cursor: default;
 }
 
 .about__section {
@@ -307,6 +420,84 @@ nav {
 }
 
 .about__section p {
-    line-height: 2.25;
-    font-size: 16px;
+    line-height: 1.5;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 14px;
+    padding-bottom: 8px;
+}
+
+.img__self {
+    max-width: 128px;
+    border-radius: 40px;
+}
+
+.about__section .background--paragraph {
+    font-size: 18px; 
+    font-weight:700;
+}
+
+.mode-render {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+#about__background,
+#about__gallery {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-in, opacity 0.6s ease;
+}
+
+#about__background.expanded,
+#about__gallery.expanded {
+    opacity: 1;
+    max-height: 2000px;
+}
+
+.gallery {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 16px auto;
+}
+
+.gallery__track {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.5s ease;
+}
+
+.gallery__card {
+    max-width: 256px;
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+    overflow: hidden;
+    background: var(--color-surface);
+    transition: all 0.3s ease;
+}
+
+.gallery__card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px var(--color-text);
+}
+
+.gallery__card img {
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+    display: block;
+}
+
+.gallery__controls {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 24px;
 }
