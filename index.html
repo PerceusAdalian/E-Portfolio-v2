@@ -22,7 +22,7 @@
                         </a>
                     </li>
                     <li class="nav__link">
-                        <a href="#projects" class="nav__icon tooltip" data-tooltip="Projects">
+                        <a href="#projects" class="nav__icon tooltip" data-tooltip="Projects" data-reveal-target="projects">
                             <i class="fa-solid fa-diagram-project"></i>
                         </a>
                     </li>
@@ -47,10 +47,26 @@
         </nav>
         <nav class="mini-nav" aria-hidden="true">
             <ul class="mini-nav__links">
-                <li><a href="#" class="nav__icon tooltip" data-tooltip="Home"><i class="fa-regular fa-house"></i></a></li>
-                <li><a href="#contact" class="nav__icon tooltip" data-tooltip="Contact"><i class="fa-regular fa-handshake"></i></a></li>
-                <li><a href="#projects" class="nav__icon tooltip" data-tooltip="Projects"><i class="fa-solid fa-diagram-project"></i></a></li>
-                <li><a href="#skills" class="nav__icon tooltip" data-tooltip="Tech Stack"><i class="fa-solid fa-info"></i></a></li>
+                <li>
+                    <a href="#" class="nav__icon tooltip" data-tooltip="Home">
+                        <i class="fa-regular fa-house"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact" class="nav__icon tooltip" data-tooltip="Contact">
+                        <i class="fa-regular fa-handshake"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#projects" class="nav__icon tooltip" data-tooltip="Projects" data-reveal-target="projects">
+                        <i class="fa-solid fa-diagram-project"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#skills" class="nav__icon tooltip" data-tooltip="Tech Stack" data-reveal-target="skills">
+                        <i class="fa-solid fa-info"></i>
+                    </a>
+                </li>
             </ul>
         </nav>
     </section>
@@ -78,7 +94,7 @@
             </div>
         </div>
     </section>
-    <section id="about__background" class="about">
+    <section id="about__background" class="about reveal-section">
         <div class="container">
             <div class="row">
                 <div class="about__section">
@@ -104,7 +120,7 @@
             </div>
         </div>
     </section>
-    <section id="about__gallery" class="about">
+    <section id="about__gallery" class="about reveal-section">
         <div class="container">
             <div class="row">
                 <div class="about__section">
@@ -125,6 +141,41 @@
                     </div>
                     <p class="background--paragraph">
                         Seen enough?<br>Allow me to show you my <a href="#projects" class="tooltip text--underline" data-reveal-target="projects" data-tooltip="Proceed to Section"><span class="text--green text--bold">Projects</span></a> next!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="about reveal-section">
+        <div class="container">
+            <div class="row">
+                <div class="about__section">
+                    <h1 class="section__title">Projects</h1>
+                    <p class="background--paragraph">
+                        Curious to see what I can do? Explore the projects below to get a closer look at my work. 
+                        Each project card is interactive and includes links to its source code/repository, and any relevant social platforms, 
+                        making it easy to fetch more context.<br><br>
+
+                        I hope these projects provide insight into my skills, problem-solving approach, and passion for software engineering.<br><br>
+                        If you have any questions or would like to discuss my work further,<br>
+                        Feel free to <a href="#contact" class="tooltip text--underline" data-tooltip="Open Contact Page"><span class="text--green">Contact Me</span></a>.
+
+                    </p>
+                    <div class="gallery">
+                        <div class="gallery_track">
+
+                        </div>
+                        <div class="gallery__controls">
+                            <button class="nav__icon tooltip gallery__btn gallery__btn--prev" data-tooltip="Previous" aria-label="Previous image">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <button class="nav__icon tooltip gallery__btn gallery__btn--next" data-tooltip="Next" aria-label="Next image">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="background--paragraph">
+                        Seen enough?<br>Let's head over to my <a href="#skills" class="tooltip text--underline" data-tooltip="Proceed to Section" data-reveal-target="skills"><span class="text--green">Tech Stack</span></a> next.
                     </p>
                 </div>
             </div>

@@ -42,6 +42,33 @@ function initRevealTriggers() {
     });
 }
 
+function initRevealTriggers() {
+    const revealSections = Array.from(document.querySelectorAll('.reveal-section'));
+
+    document.querySelectorAll('[data-reveal-target]').forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const target = document.getElementById(trigger.dataset.revealTarget);
+            if (!target) return;
+
+            const targetIndex = revealSections.indexOf(target);
+            const sectionsToExpand = targetIndex === -1
+                ? [target]
+                : revealSections.slice(0, targetIndex + 1);
+
+            target.scrollIntoView({ behavior: 'smooth' });
+
+            setTimeout(() => {
+                sectionsToExpand.forEach(section => section.classList.add('expanded'));
+                setTimeout(() => {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }, 650); // matches the 0.6s max-height transition, +50ms buffer
+            }, 50);
+        });
+    });
+}
+
 initRevealTriggers();
 navObserver.observe(mainNav);
 
