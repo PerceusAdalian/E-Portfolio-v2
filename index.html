@@ -13,7 +13,7 @@
         <nav>
             <div class="nav__container gradient-section">
                 <figure class="logo__figure">
-                    <a href="#footer" class="tooltip" data-tooltip="Jump to Footer"><img src="./assets/logo.png" class="logo" alt=""></a>
+                    <a href="#footer" class="tooltip" data-tooltip="Jump to Footer" data-reveal-target="footer"><img src="./assets/logo.png" class="logo" alt=""></a>
                 </figure>
                 <ul class="nav__links">
                     <li class="nav__link">
@@ -372,11 +372,15 @@
                             </div>
                         </div>
                     </div>
+                    <div class="mode-render">
+                        <a href="#footer" class="nav__icon tooltip" data-tooltip="Proceed to Finish" data-reveal-target="footer">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
     <div id="contact" class="modal-overlay" aria-hidden="true">
         <div class="modal-content">
             <button class="modal-close" aria-label="Close Contact Modal">&times;</button>
@@ -414,7 +418,55 @@
             </div>
         </div>
     </div>
-
+    <footer id="footer" class="about reveal-section">
+        <div class="container">
+            <div class="row">
+                <div class="about__section">
+                    <figure class="figure__">
+                        <img src="./assets/illustrations/footer.svg" alt="" class="img__">
+                    </figure>
+                    <h1 class="section__title">The End</h1>
+                    <div class="quote--wrapper">
+                        <p class="footer--quote">
+                        “Great is the art of beginning, but greater is the art of ending.”
+                        </p>
+                        <p class="footer--quote__author">
+                            - Henry Wadsworth Longfellow
+                        </p>
+                    </div>
+                    <p class="background--paragraph">
+                        So, you've reached the end. What did you think? Don't forget to <a href="#contact" class="tooltip text--underline contact-trigger" data-tooltip="Open Contact Page"><span class="text--green">Contact Me</span></a>
+                        with any comments or questions you might have. 
+                        <br><br>In the meantime, check out my other social links and resume below:
+                    </p>
+                    <div class="social__links">
+                        <ul class="nav__links">
+                            <li>
+                                <a href="./assets/atsresume.pdf" class="nav__icon tooltip" data-tooltip="Open Resume" target="_blank">
+                                    <i class="fa-solid fa-file" style="color: #2e2320;"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/perceus-willy-a71392333/" class="nav__icon tooltip" data-tooltip="LinkedIn Profile" target="_blank" aria-label="LinkedIn">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/PerceusAdalian" class="nav__icon tooltip" data-tooltip="GitHub Profile" target="_blank" aria-label="GitHub">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/perceusadalian/" class="nav__icon tooltip" data-tooltip="Instagram Profile" target="_blank">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="app.js"></script>
 </body>
 </html>

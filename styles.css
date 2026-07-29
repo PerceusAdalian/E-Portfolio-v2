@@ -604,7 +604,7 @@ nav:not(.mini-nav) {
 
 .mini-nav {
     position: fixed;
-    top: 50%;
+    top: 25%;
     left: calc(50% + 25% + 24px);
     transform: translate(0, calc(-50% - 40px)) scale(0.75);
     transform-origin: left center;
@@ -734,7 +734,8 @@ nav:not(.mini-nav) {
 #about__background,
 #about__gallery,
 #projects,
-#skills {
+#skills,
+#footer {
     margin-top: 0;
     margin-bottom: 0;
     padding-top: 0;
@@ -748,7 +749,8 @@ nav:not(.mini-nav) {
 #about__background.expanded,
 #about__gallery.expanded,
 #projects.expanded,
-#skills.expanded {
+#skills.expanded,
+#footer.expanded {
     opacity: 1;
     margin-top: 64px;
     margin-bottom: 64px;
@@ -1028,6 +1030,49 @@ nav:not(.mini-nav) {
     box-shadow: 0 4px 8px var(--color-primary);
 }
 
+/* FOOTER */
+#footer .quote--wrapper {
+    box-shadow: 0 2px 2px var(--color-heading);
+    border-radius: 24px;
+    border: 1px solid var(--color-divider);
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    vertical-align: middle;
+    padding: 24px;
+    margin: 0 auto;
+}
+
+#footer .footer--quote {
+    margin-top: -24px;
+    font-style: oblique;
+    font-size: 12px;
+    font-weight: lighter;
+    color: var(--color-text-muted);
+    padding: 8px 0 4px 0;
+}
+
+#footer .footer--quote__author {
+    margin-top: -8px;
+    margin-bottom: -16px;
+    font-style: italic;
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--color-text-muted);
+    padding: 4px 0 4px 0;
+}
+
+.social__links {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    vertical-align: middle;
+    margin-bottom: -64px;
+    padding: 8px;
+}
+
 /* ANIMATIONS */
 @keyframes fade-up {
     0% {
@@ -1078,4 +1123,121 @@ nav:not(.mini-nav) {
         transform: scale(1);
     }
     
+}
+
+/* RESPONSIVITY */
+/* Tablet / small laptop: .about is the first thing to feel cramped */
+@media (max-width: 1024px) {
+    .about {
+        max-width: 50%;
+    }
+
+    .project__gallery {
+        justify-content: flex-start;
+        min-width: 333px;
+    }
+
+
+}
+
+/* Tablet portrait: mini-nav positioning breaks, tech grid gets tight */
+@media (max-width: 768px) {
+    .about {
+        max-width: 90%;
+    }
+
+    .mini-nav {
+        top: 16px;
+        left: 50%;
+        transform: translate(-50%) scale(0.85);
+        transform-origin: center top;
+        flex-direction: row;
+    }
+
+    .mini-nav.visible {
+        transform: translate(-50%, 0) scale(0.85);
+    }
+
+    .mini-nav__links {
+        flex-direction: row;
+    }
+
+    /* tooltips were tuned to pop out sideways for the vertical rail;
+       reset them to the default downward tooltip for horizontal layout */
+    .mini-nav__links .tooltip::after,
+    .mini-nav__links .tooltip::before {
+        top: calc(100% + 8px);
+        left: 50%;
+        transform: translate(-50%, 6px);
+        border-bottom-color: var(--color-tooltip-background);
+        border-right-color: transparent;
+    }
+
+    .language {
+        width: calc(100% / 3);
+    }
+
+    .project__gallery {
+        min-width: 320px;
+    }
+
+    nav:not(.mini-nav) {
+        height: auto;
+        padding: 24px;
+    }
+}
+
+/* Phone: gallery overflow, oversized headings, cramped icon grid */
+@media (max-width: 480px) {
+    .about {
+        max-width: 90%;
+        margin: 32px auto;
+    }
+
+    .section__title {
+        font-size: 28px;
+    }
+
+    .project__gallery {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .project__description {
+        justify-content: flex-start;
+    }
+
+    .language {
+        width: calc(100% / 2);
+    }
+
+    .nav__links {
+        gap: 8px;
+        margin-bottom: 32px;
+    }
+
+    .mini-nav {
+        right: 16px;
+        padding: 4px 111px;
+    }
+
+    .modal-content {
+        padding: 0 20px;
+    }
+
+    .modal-overlay.active .modal-content {
+        padding: 24px;
+    }
+
+    .modal-form__row {
+        flex-direction: column;
+    }
+
+    .mini-nav {
+        transform: translate(-50%, -100%) scale(0.7);
+    }
+
+    .mini-nav.visible {
+        transform: translate(-50%, 0) scale(0.7);
+    }
 }
