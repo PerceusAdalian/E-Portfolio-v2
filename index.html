@@ -32,7 +32,7 @@
                         </a>
                     </li>
                     <li class="nav__link">
-                        <a href="#contact" class="nav__icon tooltip" data-tooltip="Contact">
+                        <a href="#contact" class="nav__icon tooltip contact-trigger" data-tooltip="Contact">
                             <i class="fa-regular fa-handshake"></i>
                         </a>
                     </li>
@@ -53,7 +53,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#contact" class="nav__icon tooltip" data-tooltip="Contact">
+                    <a href="#contact" class="nav__icon tooltip contact-trigger" data-tooltip="Contact">
                         <i class="fa-regular fa-handshake"></i>
                     </a>
                 </li>
@@ -161,7 +161,7 @@
 
                         I hope these projects provide insight into my skills, problem-solving approach, and passion for software engineering.<br><br>
                         If you have any questions or would like to discuss my work further,<br>
-                        Feel free to <a href="#contact" class="tooltip text--underline" data-tooltip="Open Contact Page"><span class="text--green">Contact Me</span></a>.
+                        Feel free to <a href="#contact" class="tooltip text--underline contact-trigger" data-tooltip="Open Contact Page"><span class="text--green">Contact Me</span></a>.
 
                     </p>
                     <div class="project__gallery">
@@ -376,6 +376,45 @@
             </div>
         </div>
     </section>
+
+    <div id="contact" class="modal-overlay" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close Contact Modal">&times;</button>
+            <figure class="figure__">
+                <img src="./assets/illustrations/contact.svg" alt="" class="img__">
+            </figure>
+            <h2 class="section__title">Let's Connect</h2>
+            <p class="background--paragraph">
+                I'd love to hear from you!
+            </p>
+            <p class="background--paragraph">
+                Go ahead and fill this out. You'll be redirected to an email app of your choice, ready to send.
+            </p>
+            <form id="contact-form" class="modal-form" novalidate>
+            <div class="modal-form__row">
+                    <input type="text" id="contact-first-name" class="modal-form__input" placeholder="First Name *" required>
+                    <input type="text" id="contact-last-name" class="modal-form__input" placeholder="Last Name *" required>
+                </div>
+                <input type="email" id="contact-email" class="modal-form__input" placeholder="Email *" required>
+                <input type="tel" id="contact-phone" class="modal-form__input" placeholder="Phone Number (optional)">
+                <textarea id="contact-message" class="modal-form__input modal-form__textarea" placeholder="Message (optional)" rows="4"></textarea>
+                <button type="submit" class="modal-form__submit">Send</button>
+            </form>
+            <div class="divider"><span>or reach out directly</span></div>
+            <div class="modal-links">
+                <a href="mailto:davidmwilly@gmail.com" class="nav__icon tooltip mailto-trigger" data-tooltip="Via E-Mail" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/perceus-willy-a71392333/" class="nav__icon tooltip" data-tooltip="Via LinkedIn" target="_blank" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/PerceusAdalian" class="nav__icon tooltip" data-tooltip="Via GitHub" target="_blank" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>
