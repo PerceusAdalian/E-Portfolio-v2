@@ -11,14 +11,14 @@
 <body>
     <section id="landing-page">
         <nav>
-            <div class="nav__container">
+            <div class="nav__container gradient-section">
                 <figure class="logo__figure">
                     <a href="#footer" class="tooltip" data-tooltip="Jump to Footer"><img src="./assets/logo.png" class="logo" alt=""></a>
                 </figure>
                 <ul class="nav__links">
                     <li class="nav__link">
-                        <a href="#skills" class="nav__icon tooltip" data-tooltip="Tech Stack">
-                            <i class="fa-solid fa-info"></i>
+                        <a href="#skills" class="nav__icon tooltip" data-tooltip="Tech Stack" data-reveal-target="skills">
+                            <i class="fa-solid fa-layer-group"></i>
                         </a>
                     </li>
                     <li class="nav__link">
@@ -64,7 +64,7 @@
                 </li>
                 <li>
                     <a href="#skills" class="nav__icon tooltip" data-tooltip="Tech Stack" data-reveal-target="skills">
-                        <i class="fa-solid fa-info"></i>
+                        <i class="fa-solid fa-layer-group"></i>
                     </a>
                 </li>
             </ul>
@@ -79,11 +79,11 @@
                     </div> 
                     <h1 class="section__title">Welcome!</h1>
                     <p>
-                        My name is <span class="text--dark-green text--bold">Percy Willy</span>, and I'm a self-taught aspiring front-end software engineer.
+                        My name is <span class="text--green text--bold">Percy Willy</span>, and I'm a self-taught aspiring front-end software engineer.
                         <br>I'm so glad you could make it. Let's dive in!
                     </p>
                     <figure class="figure__">
-                        <img src="./assets/about_img_welcome.svg" class="img__" alt="">
+                        <img src="./assets/illustrations/about_img_welcome.svg" class="img__" alt="">
                     </figure>
                     <div class="mode-render">
                         <a href="#about__background" class="nav__icon tooltip" data-tooltip="Continue" data-reveal-target="about__background">
@@ -99,7 +99,7 @@
             <div class="row">
                 <div class="about__section">
                     <figure class="figure__">
-                        <img src="./assets/background.svg" class="img__" alt="">
+                        <img src="./assets/illustrations/background.svg" class="img__" alt="">
                     </figure>
                     <h1 class="section__title">My Background</h1>
                     <p class="background--paragraph">
@@ -124,7 +124,10 @@
         <div class="container">
             <div class="row">
                 <div class="about__section">
-                    <h1 class="section__title">🖼️ Gallery 📸</h1>
+                    <figure class="figure__">
+                        <img src="./assets/illustrations/photography.svg" alt="" class="img__">
+                    </figure>
+                    <h1 class="section__title">Gallery</h1>
                     <p class="background--paragraph">
                         Apart from coding, I <span class="text--italic">love</span> nature. <br>Here's some of my favorite shots from this year:
                     </p>
@@ -161,9 +164,121 @@
                         Feel free to <a href="#contact" class="tooltip text--underline" data-tooltip="Open Contact Page"><span class="text--green">Contact Me</span></a>.
 
                     </p>
-                    <div class="gallery">
-                        <div class="gallery_track">
+                    <div class="project__gallery">
+                        <div class="project__gallery-track">
+                            <div class="project">
+                                <div class="project__wrapper">
+                                    <img src="./assets/projects/devdex.png" class="project__img" alt="">
+                                    <div class="project__description">
+                                        <h3 class="project__description--title"><strong>DevDex</strong></h3>
+                                        <h4 class="project__description--sub-title"><strong>Tech Stack</strong></h4>
+                                        <p class="project__description--paragraph">React 18, Vite, Tailwind CSS, React Router, PrismJS, Gists API, and localStorage.</p>
+                                        <h4 class="project__description--sub-title"><strong>Supported Languages</strong></h4>
+                                        <p class="project__description--paragraph">JavaScript, Python, Java, C, C++, C#, Go, Rust, HTML, CSS, SQL, Bash, JSON, and more.</p>
+                                        <h4 class="project__description--sub-title"><strong>Overview</strong></h4>
+                                        <p class="project__description--paragraph">A personal code snippet vault for developers. Store, organize, search, and browse code snippets both provided by the developers or by others. Stored locally on your machine using cookies, so long as you have the website saved on-device, you can come back to your code anytime; even while off-line.</p>
+                                        <div class="project__link--container">
+                                            <a href="https://github.com/PerceusAdalian/DevDex" class="project__description--link tooltip--project" data-tooltip="Open Github" target="_blank">
+                                                <i class="fa-brands fa-github"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="project">
+                                <div class="project__wrapper">
+                                    <img src="./assets/projects/ouroboros.png" alt="Ouroboros Project Image" class="project__img">
+                                    <div class="project__description">
+                                        <h3 class="project__description--title"><strong>Ωuroboros</strong></h3>
+                                        <h4 class="project__description--sub-title"><strong>Tech Stack</strong></h4>
+                                        <p class="project__description--paragraph">Java 25+ and Spigot API.</p>
+                                        <h4 class="project__description--sub-title"><strong>Languages Used</strong></h5>
+                                        <p class="project__description--paragraph">Java, YAML, JSON, Bash (Scripting).</p>
+                                        <h4 class="project__description--sub-title"><strong>Overview</strong></h4>
+                                        <p class="project__description--paragraph">A modular, feature-rich MMO plugin for Minecraft (Spigot/Paper) that transforms the vanilla experience into a living, breathing RPG world. Built on a carefully architected plugin framework, Ouroboros delivers procedurally-generated equipment, dynamic ability systems, and progression mechanics that evolve as players engage with the world.</p>
+                                        <div class="project__link--container">
+                                            <a href="https://github.com/PerceusAdalian/Ouroboros" class="project__description--link tooltip--project" data-tooltip="Open Github" target="_blank">
+                                                <i class="fa-brands fa-github"></i>
+                                            </a>
+                                            <a href="https://www.instagram.com/stories/highlights/18060985277510649/" class="project__description--link tooltip--project" data-tooltip="Open Instagram" target="_blank">
+                                                <i class="fa-brands fa-instagram"></i>
+                                            </a>
+                                            <a href="https://discord.gg/WPVACj87hb" class="project__description--link tooltip--project" data-tooltip="Open Discord" target="_blank">
+                                                <i class="fa-brands fa-discord"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div class="project">
+                                <div class="project__wrapper">
+                                    <img src="./assets/projects/TreactDemo.png" alt="" class="project__img">
+                                    <div class="project__description">
+                                        <h3 class="project__description--title"><strong>Treact</strong></h3>
+                                        <h4 class="project__description--sub-title"><strong>Languages Used</strong></h4>
+                                        <p class="project__description--paragraph">HTML, CSS, and JavaScript.</p>
+                                        <h4 class="project__description--sub-title"><strong>Overview</strong></h4>
+                                        <p class="project__description--paragraph">
+                                            A showcase of industry standard CSS and HTML practices. 
+                                            This project contains a complete template website built to showcase a modern and sleek e-commerce build,
+                                            attempting to attract new customers via a React Template repository with paid subscription cards, about page, and more.
+                                        </p>
+                                        <div class="project__link--container">
+                                            <a href="https://github.com/PerceusAdalian/Module-3-Project" class="project__description--link tooltip--project" data-tooltip="Open Github" target="_blank">
+                                                <i class="fa-brands fa-github"></i>
+                                            </a>
+                                            <a href="https://perceusadalian.github.io/Module-3-Project/" class="project__description--link tooltip--project" data-tooltip="Open Website Link" target="_blank">
+                                                <i class="fa-solid fa-link"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project">
+                                <div class="project__wrapper">
+                                    <img src="./assets/projects/E-CommerceDemo.png" alt="" class="project__img">
+                                    <div class="project__description">
+                                        <h3 class="project__description--title"><strong>E-Commerce Website</strong></h3>
+                                        <h4 class="project__description--sub-title"><strong>Languages Used</strong></h4>
+                                        <p class="project__description--paragraph">HTML, CSS, and JavaScript.</p>
+                                        <h4 class="project__description--sub-title"><strong>Overview</strong></h4>
+                                        <p class="project__description--paragraph">
+                                            A showcase of industry standard CSS and HTML practices. 
+                                            This project showcases a beautiful aqua theme and houses a mockup for an e-commerce store selling/lending books.
+                                            This website can be used as a template to expand into a fully-functional store.
+                                        </p>
+                                        <div class="project__link--container">
+                                            <a href="https://github.com/PerceusAdalian/E-Commerce-Website" class="project__description--link tooltip--project" data-tooltip="Open Github" target="_blank">
+                                                <i class="fa-brands fa-github"></i>
+                                            </a>
+                                            <a href="https://perceusadalian.github.io/E-Commerce-Website/" class="project__description--link tooltip--project" data-tooltip="Open Website Link" target="_blank">
+                                                <i class="fa-solid fa-link"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project">
+                                <div class="project__wrapper">
+                                    <img src="./assets/projects/project_generic.svg" alt="Oracle Project Image" class="project__img">
+                                    <div class="project__description">
+                                        <h3 class="project__description--title"><strong>Oracle</strong></h3>
+                                        <h4 class="project__description--sub-title"><strong>Languages Used</strong></h4>
+                                        <p class="project__description--paragraph">Java, Python, C++, and more.</p>
+                                        <h4 class="project__description--sub-title"><strong>Overview</strong></h4>
+                                        <p class="project__description--paragraph">A showcase of academic understanding and demonstration of coursework engaged with and code modeled for. Oracle is the culmination of all that I've documented from university.</p>
+                                        <div class="project__link--container">
+                                            <a href="https://github.com/PerceusAdalian/Oracle" class="project__description--link tooltip--project" data-tooltip="Open Github" target="_blank">
+                                                <i class="fa-brands fa-github"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="gallery__controls">
                             <button class="nav__icon tooltip gallery__btn gallery__btn--prev" data-tooltip="Previous" aria-label="Previous image">
@@ -177,6 +292,86 @@
                     <p class="background--paragraph">
                         Seen enough?<br>Let's head over to my <a href="#skills" class="tooltip text--underline" data-tooltip="Proceed to Section" data-reveal-target="skills"><span class="text--green">Tech Stack</span></a> next.
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="about reveal-section">
+        <div class="container">
+            <div class="row">
+                <div class="about__section">
+                    <figure class="figure__">
+                        <img src="./assets/illustrations/techstack.svg" alt="" class="img__">
+                    </figure>
+                    <h1 class="section__title">Tech Stack</h1>
+                    <p class="background--paragraph">
+                        I have experience across a dozen programming languages and technologies, giving me a strong foundation in software engineering. 
+                        While my university coursework focused primarily on Java, Python, and C++, my 
+                        <a href="#projects" class="tooltip text--underline" data-tooltip="Jump to Section" data-reveal-target="projects"><span class="text--green">Projects</span></a> 
+                        have allowed me to expand into modern web development with HTML, CSS, JavaScript, React, Node.js, and more.
+
+                        <br><br>
+
+                        Explore the Tech Cards below to learn more about my experience, proficiency, and the technologies I've worked with.
+
+                    </p>
+                    <div class="techstack">
+                        <div class="language">
+                            <div class="language__img tooltip" data-tooltip="Java (26+) | 5+ Years">
+                                <i class="fa-brands fa-java"></i>
+                            </div>
+                        </div>
+                        <div class="language">
+                            <div class="language__img tooltip" data-tooltip="Git | 5+ Years">
+                                <i class="fa-brands fa-git"></i>
+                            </div>
+                        </div>
+                        <div class="language">
+                            <div class="language__img tooltip" data-tooltip="Python (3.14) | ~5 Years">
+                                <i class="fa-brands fa-python"></i>
+                            </div>
+                        </div>
+                        <div class="language">
+                            <div class="language__img tooltip" data-tooltip="C++ | ~3 Years">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                        </div>
+                        <div class="language">
+                            <div class="language__img tooltip" data-tooltip="HTML-5 | ~2 Years">
+                                <i class="fa-brands fa-html5"></i>
+                            </div>
+                        </div>
+                        <div class="language">
+                            <div class="language__img tooltip" data-tooltip="CSS-3 | ~2 Years">
+                                <i class="fa-brands fa-css3-alt"></i>
+                            </div>
+                        </div>
+                        <div class="language">
+                            <div class="language__img tooltip" data-tooltip="JavaScript | ~1 Years">
+                                <i class="fa-brands fa-square-js"></i>
+                            </div>
+                        </div>
+                        <div class="language">
+                            <div class="language__img tooltip" data-tooltip="React | <1 Year">
+                                <i class="fa-brands fa-react"></i>
+                            </div>
+                        </div>
+                        <div class="language">
+                            <div class="language__img tooltip" data-tooltip="Node.js | <1 Year">
+                                <i class="fa-brands fa-node-js"></i>
+                            </div>
+                        </div>
+                        <div class="language">
+                            <div class="language__img tooltip" data-tooltip="NPM | <1 Year">
+                                <i class="fa-brands fa-npm"></i>
+                            </div>
+                        </div>
+                        <div class="language">
+                            <div class="language__img tooltip" data-tooltip="Vite | <1 Year">
+                                <i class="fa-solid fa-v"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

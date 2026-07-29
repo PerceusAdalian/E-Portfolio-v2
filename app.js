@@ -23,26 +23,6 @@ toggleMode.addEventListener('click', () =>
 });
 
 function initRevealTriggers() {
-    document.querySelectorAll('[data-reveal-target]').forEach(trigger => {
-        trigger.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            const target = document.getElementById(trigger.dataset.revealTarget);
-            if (!target) return;
-
-            target.scrollIntoView({ behavior: 'smooth' });
-
-            setTimeout(() => {
-                target.classList.add('expanded');
-                setTimeout(() => {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }, 450);
-            }, 50);
-        });
-    });
-}
-
-function initRevealTriggers() {
     const revealSections = Array.from(document.querySelectorAll('.reveal-section'));
 
     document.querySelectorAll('[data-reveal-target]').forEach(trigger => {
@@ -63,8 +43,8 @@ function initRevealTriggers() {
                 sectionsToExpand.forEach(section => section.classList.add('expanded'));
                 setTimeout(() => {
                     target.scrollIntoView({ behavior: 'smooth' });
-                }, 650); // matches the 0.6s max-height transition, +50ms buffer
-            }, 50);
+                }, 360);
+            }, 5);
         });
     });
 }
@@ -103,6 +83,35 @@ function initGallery() {
     update();
 }
 
+function initProjectGallery() {
+    const gallery = document.querySelector('.project__gallery');
+    if (!gallery) return;
+
+    const track = gallery.querySelector('.project__gallery-track');
+    const cards = Array.from(track.children);
+    const prevBtn = gallery.querySelector('.gallery__btn--prev');
+    const nextBtn = gallery.querySelector('.gallery__btn--next');
+
+    let index = 0;
+
+    function update() {
+        const cardWidth = cards[0].getBoundingClientRect().width;
+        const gap = parseFloat(getComputedStyle(track).gap) || 0;
+        track.style.transform = `translateX(-${index * (cardWidth + gap)}px)`;
+    }
+
+    function goTo(newIndex) {
+        index = (newIndex + cards.length) % cards.length;
+        update();
+    }
+    
+    prevBtn.addEventListener('click', () => goTo(index - 1));
+    nextBtn.addEventListener('click', () => goTo(index + 1));
+    window.addEventListener('resize', update);
+
+    update();
+}
+
 const galleryImages = [
     'img_1.jpeg', 'img_2.jpeg', 'img_3.jpeg', 'img_4.jpeg', 'img_5.jpeg', 'img_6.jpeg', 'img_7.jpeg', 'img_8.jpeg', 'img_9.jpeg',
     'img_10.jpeg', 'img_11.jpeg', 'img_12.jpeg', 'img_13.jpeg', 'img_14.jpeg', 'img_15.jpeg', 'img_16.jpeg', 'img_17.jpeg', 'img_18.jpeg',
@@ -122,3 +131,4 @@ function buildGalleryCards() {
 
 buildGalleryCards();
 initGallery();
+initProjectGallery();
