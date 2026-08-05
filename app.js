@@ -202,3 +202,11 @@ document.querySelectorAll('.mailto-trigger').forEach(link => {
         window.open(link.href, '_blank');
     });
 });
+
+document.querySelectorAll('.project__wrapper').forEach(card => {
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches)
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('a')) return;
+            card.classList.toggle('is-active');
+        });
+});
