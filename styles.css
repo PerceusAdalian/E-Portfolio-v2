@@ -1072,6 +1072,21 @@ nav:not(.mini-nav) {
     padding: 8px;
 }
 
+.copyright {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: 8px;
+    padding: 8px;
+    border: 2px dotted var(--color-divider);
+    border-radius: 8px;
+}
+
+p.copyright {
+    font-weight: lighter;
+    font-size: 10px;
+}
+
 /* ANIMATIONS */
 @keyframes fade-up {
     0% {
